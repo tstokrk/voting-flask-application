@@ -1,0 +1,44 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Raw data</h1>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Created at</th>
+        <th>First Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Income</th>
+        <th>Satisfaction</th>
+        <th>Python</th>
+        <th>Flask</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for element in formdata %}
+    <tr>
+        <td>{{ element.id }}</td>
+        <td>{{ element.created_at }}</td>
+        <td>{{ element.firstname }}</td>
+        <td>{{ element.email }}</td>
+        <td>{{ element.age }}</td>
+        <td>{{ element.income }}</td>
+        <td>{{ element.satisfaction }}</td>
+        <td>{{ element.q1 }}</td>
+        <td>{{ element.q2 }}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

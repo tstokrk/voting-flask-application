@@ -1,0 +1,81 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Please fill the form</h1>
+</div>
+
+<form role="form" action="/save" method="post">
+    <h3>Personal data</h3>
+    <div class="form-group">
+        <label for="firstname">Firstname:</label>
+        <input type="text" class="form-control" id="firstname" name="firstname" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" class="form-control" id="age" name="age" min="1" max="100" required>
+    </div>
+    <h3>Employee Job Satisfaction</h3>
+    <div class="form-group">
+      <label for="income">Annual income $:</label>
+      <select class="form-control" id="income" name="income">
+        <option>20</option>
+        <option>50</option>
+        <option>100</option>
+        <option>150</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="satisfaction">Considering everything, how satisfied are you with your job?</label>
+        <input type="number" class="form-control" id="satisfaction" name="satisfaction" min="1" max="5" required>
+    </div>
+    <h3>Programming skills</h3>
+    <b>Rate your proficiency with Python language</b>
+    <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="q1" value="1">1 (Beginner)
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q1" value="2">2 (Junior)
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q1" value="3" checked>3 (Middle)
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q1" value="4">4 (Senior)
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q1" value="5">5 (Expert)
+        </label>
+    </div>
+    <b>Rate your proficiency with Flask framework</b>
+    <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="q2" value="1">1 (Beginner)
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q2" value="2">2 (Junior)
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q2" value="3" checked>3 (Middle)
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q2" value="4">4 (Senior)
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q2" value="5">5 (Expert)
+        </label>
+    </div>
+
+
+    <button type="submit" class="btn btn-default">Save</button>
+</form>
+
+{% endblock %}
+
