@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="page-header">
-    <h1>Raw data</h1>
+    <h1>Odpowiedzi ankietowanych</h1>
 </div>
 
 <table class="table">
@@ -12,13 +12,19 @@
     <tr>
         <th>#</th>
         <th>Created at</th>
-        <th>First Name</th>
+        <th>Gender</th>
         <th>Email</th>
         <th>Age</th>
-        <th>Income</th>
-        <th>Satisfaction</th>
-        <th>Python</th>
-        <th>Flask</th>
+        <th>Czy chciałbyś wyjechać na wakacje z biurem podróży?</th>
+        <th>W jakim miesiącu chciałbyś wyjechać na wakacje?</th>
+        <th>Dokąd chciałbyś wyjechać na wakacje?</th>
+        <th>W jakim miejscu chciałbyś spędzić wakacje?</th>
+        <th>Na ile aktywnie spędzasz swoje wakacje?</th>
+        <th>Z kim zazwyczaj wyjeżdżasz na wakacje?</th>
+        <th>Ile pieniędzy przeznaczasz na wakacyjny wyjazd?</th>
+        <th>Ile dni chcesz przeznaczyć na wyjazd wakacyjny?</th>
+        <th>Jaki środek transportu preferujesz, aby dosać się na urlop?</th>
+        <th>Jakie są twoje preferencje żywieniowe podczas urlopu?</th>
     </tr>
     </thead>
 
@@ -27,14 +33,19 @@
     <tr>
         <td>{{ element.id }}</td>
         <td>{{ element.created_at }}</td>
-        <td>{{ element.firstname }}</td>
+        <td>{{ element.gender }}</td>
         <td>{{ element.email }}</td>
         <td>{{ element.age }}</td>
         <td>{{ element.income }}</td>
-        <td>{{ element.satisfaction }}</td>
+        <td>{{ element.month }}</td>
         <td>{{ element.q1 }}</td>
         <td>{{ element.q2 }}</td>
-
+        <td>{{ element.q3 }}</td>
+        <td>{{ element.q4 }}</td>
+        <td>{{ element.q5 }}</td>
+        <td>{{ element.q6 }}</td>
+        <td>{{ element.q7 }}</td>
+        <td>{{ element.q8 }}</td>
     </tr>
     {% endfor %}
     </tbody>

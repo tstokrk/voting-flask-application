@@ -4,77 +4,170 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Please fill the form</h1>
+  <h1>Proszę odpowiedz na pytania</h1>
 </div>
 
 <form role="form" action="/save" method="post">
-    <h3>Personal data</h3>
+    <h3>Dane osobowe</h3>
     <div class="form-group">
-        <label for="firstname">Firstname:</label>
-        <input type="text" class="form-control" id="firstname" name="firstname" required>
+        <label for="gender">Płeć:</label>
+        <select class="form-control" id="gender" name="gender">
+            <option>Kobieta</option>
+            <option>Mężczyzna</option>
+        </select>
     </div>
     <div class="form-group">
-        <label for="email">Email address:</label>
+        <label for="email">Email:</label>
         <input type="email" class="form-control" id="email" name="email" required>
     </div>
     <div class="form-group">
-        <label for="age">Age:</label>
+        <label for="age">Wiek:</label>
         <input type="number" class="form-control" id="age" name="age" min="1" max="100" required>
     </div>
-    <h3>Employee Job Satisfaction</h3>
+    <h3>Gdzie studenci spędzają wakacje?</h3>
     <div class="form-group">
-      <label for="income">Annual income $:</label>
+      <label for="income">Czy chciałbyś wyjechać na wakacje z biurem podróży?</label>
       <select class="form-control" id="income" name="income">
-        <option>20</option>
-        <option>50</option>
-        <option>100</option>
-        <option>150</option>
+        <option>Tak</option>
+        <option>Nie</option>
+        <option>Nie wiem</option>
       </select>
     </div>
     <div class="form-group">
-        <label for="satisfaction">Considering everything, how satisfied are you with your job?</label>
-        <input type="number" class="form-control" id="satisfaction" name="satisfaction" min="1" max="5" required>
+    <label for="month">W jakim miesiącu chciałbyś wyjechać na wakacje?</label>
+    <select class="form-control" id="month" name="month">
+        <option>Maj</option>
+        <option>Czerwiec</option>
+        <option>Lipiec</option>
+        <option>Sierpień</option>
+        <option>Wrzesień</option>
+        <option>Październik</option>
+    </select>
     </div>
-    <h3>Programming skills</h3>
-    <b>Rate your proficiency with Python language</b>
+    <b>Dokąd chciałbyś wyjechać na wakacje?</b>
     <div class="form-group">
         <label class="radio-inline">
-          <input type="radio" name="q1" value="1">1 (Beginner)
+          <input type="radio" name="q1" value="Gdzieś w Polsce">Gdzieś w Polsce
         </label>
         <label class="radio-inline">
-          <input type="radio" name="q1" value="2">2 (Junior)
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="q1" value="3" checked>3 (Middle)
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="q1" value="4">4 (Senior)
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="q1" value="5">5 (Expert)
+          <input type="radio" name="q1" value="Za granicę">Za granicę
         </label>
     </div>
-    <b>Rate your proficiency with Flask framework</b>
+    <b>W jakim miejscu chciałbyś spędzić wakacje?</b>
     <div class="form-group">
         <label class="radio-inline">
-          <input type="radio" name="q2" value="1">1 (Beginner)
+          <input type="radio" name="q2" value="Nad morzem">Nad morzem
         </label>
         <label class="radio-inline">
-          <input type="radio" name="q2" value="2">2 (Junior)
+          <input type="radio" name="q2" value="Nad jeziorem">Nad jeziorem
         </label>
         <label class="radio-inline">
-          <input type="radio" name="q2" value="3" checked>3 (Middle)
+          <input type="radio" name="q2" value="W górach">W górach
         </label>
         <label class="radio-inline">
-          <input type="radio" name="q2" value="4">4 (Senior)
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="q2" value="5">5 (Expert)
+          <input type="radio" name="q2" value="W wielu miejscach (wakacje objazdowe)">W wielu miejscach (wakacje objazdowe)
         </label>
     </div>
-
-
-    <button type="submit" class="btn btn-default">Save</button>
+    <b>Na ile aktywnie spędzasz swoje wakacje?</b>
+    <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="q3" value="Głównie odpoczywam">Głównie odpoczywam
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q3" value="Odpoczywam, ale lubię aktywnie spędzać urlop">Odpoczywam, ale lubię aktywnie spędzać urlop
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q3" value="Cały urlop spędzam aktywnie">Cały urlop spędzam aktywnie
+        </label>
+    </div>
+    <b>Z kim zazwyczaj wyjeżdżasz na wakacje?</b>
+    <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="q4" value="Sam">Sam
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q4" value="Z partnerem/partnerką">Z partnerem/partnerką
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q4" value="Z rodziną">Z rodziną
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q4" value="Ze znajomymi">Ze znajomymi
+        </label>
+    </div>
+    <b>Ile pieniędzy przeznaczasz na wakacyjny wyjazd?</b>
+    <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="q5" value="0 - 700 zł">0 - 700 zł
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q5" value="701 - 1300 zł">701 - 1300 zł
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q5" value="1301 - 1800 zł" >1301 - 1800 zł
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q5" value="1801 - 2500 zł">1801 - 2500 zł
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q5" value="Powyżej 2500 zł">Powyżej 2500 zł
+        </label>
+    </div>
+    <b>Ile dni chcesz przeznaczyć na wyjazd wakacyjny?</b>
+    <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="q6" value="Do 3 dni">Do 3 dni
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q6" value="Do 5 dni">Do 5 dni
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q6" value="Do 7 dni">Do 7 dni
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q6" value="Do 10 dni">Do 10 dni
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q6" value="Do 14 dni">Do 14 dni
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q6" value="Powyżej 14 dni">Powyżej 14 dni
+        </label>
+    </div>
+    <b>Jaki środek transportu preferujesz, aby dostać się na urlop?</b>
+    <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="q7" value="Autokar">Autokar
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q7" value="Własny samochód">Własny samochód
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q7" value="Samolot">Samolot
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q7" value="Pociąg">Pociąg
+        </label>
+    </div>
+    <b>Jakie są twoje preferencje żywieniowe podczas urlopu?</b>
+    <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="q8" value="Posiłki we własnym zakresie">Posiłki we własnym zakresie
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q8" value="Tylko śniadania">Tylko śniadania
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q8" value="Śniadanie i obiadokolacja">Śniadanie i obiadokolacja
+        </label><br/>
+        <label class="radio-inline">
+          <input type="radio" name="q8" value="Śniadanie, obiad i kolacja">Śniadanie, obiad i kolacja
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="q8" value="All inclusive">All inclusive
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default">Wyślij odpowiedzi</button>
 </form>
 
 {% endblock %}
